@@ -1,0 +1,2078 @@
+[
+  {
+    "address": "test/openzwave/1/$node",
+    "attr": {
+      "Basic": "0",
+      "Security Node": "false",
+      "description": "Static PC Controller",
+      "manufacturer": "AEON Labs",
+      "model": "ZW090 Z-Stick Gen5 US",
+      "name": "",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Basic": {
+        "datatype": "number",
+        "description": "Basic"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "1",
+    "nodeId": "1",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:46:48.070-0700"
+  },
+  {
+    "address": "test/openzwave/8/$node",
+    "attr": {
+      "Security Node": "false",
+      "Wake-up Interval": "3600",
+      "description": "Routing Binary Sensor",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "8",
+    "nodeId": "8",
+    "status": {
+      "state": "sleeping"
+    },
+    "timestamp": "2020-09-26T20:46:06.958-0700"
+  },
+  {
+    "address": "test/openzwave/2/$node",
+    "attr": {
+      "1": "Power",
+      "100": "False",
+      "101": "8",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "600",
+      "112": "600",
+      "113": "600",
+      "2": "0",
+      "254": "0",
+      "255": "False",
+      "80": "None",
+      "90": "False",
+      "91": "50",
+      "92": "10",
+      "Reset": "False",
+      "Security Node": "false",
+      "Switch All": "On and Off Enabled",
+      "description": "Binary Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "DSC18103 Micro Smart Switch (2nd Edition)",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "1": {
+        "datatype": "enum",
+        "description": "1: Report type"
+      },
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type G1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type G2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type G3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Default Group Time"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send interval G1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send interval G2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send interval G3"
+      },
+      "2": {
+        "datatype": "number",
+        "description": "2: Blinking behavior"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enable Wattage Reports"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Wattage threshold"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Wattage threshold percent"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "2",
+    "nodeId": "2",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.811-0700"
+  },
+  {
+    "address": "test/openzwave/13/$node",
+    "attr": {
+      "Security Node": "false",
+      "Wake-up Interval": "3600",
+      "description": "Routing Binary Sensor",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "13",
+    "nodeId": "13",
+    "status": {
+      "state": "sleeping"
+    },
+    "timestamp": "2020-09-26T20:46:32.180-0700"
+  },
+  {
+    "address": "test/openzwave/7/$node",
+    "attr": {
+      "1": "Power",
+      "100": "False",
+      "101": "8",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "600",
+      "112": "600",
+      "113": "600",
+      "2": "0",
+      "254": "0",
+      "255": "False",
+      "80": "None",
+      "90": "False",
+      "91": "50",
+      "92": "10",
+      "Reset": "False",
+      "Security Node": "false",
+      "Switch All": "On and Off Enabled",
+      "description": "Binary Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "DSC18103 Micro Smart Switch (2nd Edition)",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "1": {
+        "datatype": "enum",
+        "description": "1: Report type"
+      },
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type G1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type G2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type G3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Default Group Time"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send interval G1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send interval G2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send interval G3"
+      },
+      "2": {
+        "datatype": "number",
+        "description": "2: Blinking behavior"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enable Wattage Reports"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Wattage threshold"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Wattage threshold percent"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "7",
+    "nodeId": "7",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.812-0700"
+  },
+  {
+    "address": "test/openzwave/6/$node",
+    "attr": {
+      "Security Node": "false",
+      "Wake-up Interval": "3600",
+      "description": "Routing Multilevel Sensor",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "6",
+    "nodeId": "6",
+    "status": {
+      "state": "sleeping"
+    },
+    "timestamp": "2020-09-26T20:45:58.352-0700"
+  },
+  {
+    "address": "test/openzwave/gateway/$node",
+    "attr": {
+      "type": "gateway"
+    },
+    "config": {
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "gateway",
+    "nodeId": "gateway",
+    "timestamp": "2020-09-26T20:45:48.894-0700"
+  },
+  {
+    "address": "test/openzwave/15/$node",
+    "attr": {
+      "1": "Power",
+      "100": "False",
+      "101": "8",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "600",
+      "112": "600",
+      "113": "600",
+      "2": "0",
+      "254": "0",
+      "255": "False",
+      "80": "None",
+      "90": "False",
+      "91": "50",
+      "92": "10",
+      "Reset": "False",
+      "Security Node": "false",
+      "Switch All": "Disabled",
+      "description": "Binary Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "DSC18103 Micro Smart Switch (2nd Edition)",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "1": {
+        "datatype": "enum",
+        "description": "1: Report type"
+      },
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type G1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type G2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type G3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Default Group Time"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send interval G1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send interval G2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send interval G3"
+      },
+      "2": {
+        "datatype": "number",
+        "description": "2: Blinking behavior"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enable Wattage Reports"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Wattage threshold"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Wattage threshold percent"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "15",
+    "nodeId": "15",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.813-0700"
+  },
+  {
+    "address": "test/openzwave/17/$node",
+    "attr": {
+      "1": "120",
+      "10": "10",
+      "100": "0",
+      "101": "0",
+      "102": "0",
+      "103": "0",
+      "11": "10",
+      "110": "0",
+      "111": "720",
+      "112": "720",
+      "113": "720",
+      "12": "0",
+      "20": "0",
+      "253": "0",
+      "254": "0",
+      "255": "0",
+      "3": "0",
+      "4": "50",
+      "5": "50",
+      "6": "50",
+      "7": "50",
+      "8": "10",
+      "9": "10",
+      "Reset": "False",
+      "Security Node": "false",
+      "description": "Routing Multilevel Sensor",
+      "manufacturer": "AEON Labs",
+      "model": "DSB09104 Home Energy Meter",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "1": {
+        "datatype": "number",
+        "description": "1: Country Voltage"
+      },
+      "10": {
+        "datatype": "number",
+        "description": "10: Wattage Percentage Change C2"
+      },
+      "100": {
+        "datatype": "number",
+        "description": "100: Reset #101-103"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Group 1 Reports"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Group 2 Reports"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Group 3 Reports"
+      },
+      "11": {
+        "datatype": "number",
+        "description": "11: Wattage Percentage Change C3"
+      },
+      "110": {
+        "datatype": "number",
+        "description": "110: Reset #111-113"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Group 1 Interval"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Group 2 Interval"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Group 3 Interval"
+      },
+      "12": {
+        "datatype": "number",
+        "description": "12: Accumulate energy"
+      },
+      "253": {
+        "datatype": "number",
+        "description": "253: Unit Recalibration (dangerous)"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device Tag"
+      },
+      "255": {
+        "datatype": "number",
+        "description": "255: Reset default configuration"
+      },
+      "3": {
+        "datatype": "number",
+        "description": "3: Power changed"
+      },
+      "4": {
+        "datatype": "number",
+        "description": "4: Wattage Threshold"
+      },
+      "5": {
+        "datatype": "number",
+        "description": "5: Wattage Threshold C1"
+      },
+      "6": {
+        "datatype": "number",
+        "description": "6: Wattage Threshold C2"
+      },
+      "7": {
+        "datatype": "number",
+        "description": "7: Wattage Threshold C3"
+      },
+      "8": {
+        "datatype": "number",
+        "description": "8: Wattage Percentage Change"
+      },
+      "9": {
+        "datatype": "number",
+        "description": "9: Wattage Percentage Change C1"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "17",
+    "nodeId": "17",
+    "status": {
+      "lastError": "Timeout",
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.811-0700"
+  },
+  {
+    "address": "test/openzwave/12/$node",
+    "attr": {
+      "Security Node": "false",
+      "Wake-up Interval": "3600",
+      "description": "Routing Binary Sensor",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "12",
+    "nodeId": "12",
+    "status": {
+      "state": "sleeping"
+    },
+    "timestamp": "2020-09-26T20:46:24.109-0700"
+  },
+  {
+    "address": "test/openzwave/5/$node",
+    "attr": {
+      "100": "False",
+      "101": "0",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "3",
+      "112": "600",
+      "113": "600",
+      "20": "Last status (Default)",
+      "200": "Aeon Labs Standard (Default)",
+      "21": "Reserved",
+      "252": "Disable",
+      "254": "0",
+      "255": "False",
+      "3": "Active Overload Protection (Default)",
+      "80": "Nothing (Default)",
+      "81": "The LED will follow the status (on/off) of its load. (Default)",
+      "83": "14524637",
+      "84": "5263440",
+      "90": "False",
+      "91": "25",
+      "92": "5",
+      "Color Channels": "28",
+      "Dimming Duration": "255",
+      "Frame Count": "0",
+      "Ignore Start Level": "True",
+      "Powerlevel": "Normal",
+      "Report": "False",
+      "Reset": "False",
+      "Security Node": "false",
+      "Set Powerlevel": "False",
+      "Start Level": "0",
+      "Switch All": "On and Off Enabled",
+      "Test": "False",
+      "Test Node": "0",
+      "Test Powerlevel": "Normal",
+      "Timeout": "0",
+      "description": "On/Off Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "ZW096 Smart Switch 6",
+      "softwareVersion": "1.5.0",
+      "type": "On/Off Power Switch"
+    },
+    "config": {
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type sent in Reporting Group 1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type sent in Reporting Group 2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type sent in Reporting Group 3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Set 111 to 113 to default"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send Interval for Reporting Group 1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send Interval for Reporting Group 2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send Interval for Reporting Group 3"
+      },
+      "20": {
+        "datatype": "enum",
+        "description": "20: Output Load Status"
+      },
+      "200": {
+        "datatype": "enum",
+        "description": "200: Partner ID"
+      },
+      "21": {
+        "datatype": "enum",
+        "description": "21: RGB Led Color for Testing"
+      },
+      "252": {
+        "datatype": "enum",
+        "description": "252: Configuration Locked"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "3": {
+        "datatype": "enum",
+        "description": "3: Current Overload Protection"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "81": {
+        "datatype": "enum",
+        "description": "81: Configure the state of the LED"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enables/disables parameter 91/92"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Minimum Change to send Report (Watt)"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Minimum Change to send Report (%)"
+      },
+      "Color Channels": {
+        "datatype": "number",
+        "description": "Color Channels"
+      },
+      "Dimming Duration": {
+        "datatype": "number",
+        "description": "Dimming Duration"
+      },
+      "Frame Count": {
+        "datatype": "number",
+        "description": "Frame Count"
+      },
+      "Ignore Start Level": {
+        "datatype": "boolean",
+        "description": "Ignore Start Level"
+      },
+      "Powerlevel": {
+        "datatype": "enum",
+        "description": "Powerlevel"
+      },
+      "Report": {
+        "datatype": "boolean",
+        "description": "Report"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Set Powerlevel": {
+        "datatype": "boolean",
+        "description": "Set Powerlevel"
+      },
+      "Start Level": {
+        "datatype": "number",
+        "description": "Start Level"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "Test": {
+        "datatype": "boolean",
+        "description": "Test"
+      },
+      "Test Node": {
+        "datatype": "number",
+        "description": "Test Node"
+      },
+      "Test Powerlevel": {
+        "datatype": "enum",
+        "description": "Test Powerlevel"
+      },
+      "Timeout": {
+        "datatype": "number",
+        "description": "Timeout"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "5",
+    "nodeId": "5",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.812-0700"
+  },
+  {
+    "address": "test/openzwave/3/$node",
+    "attr": {
+      "1": "Power",
+      "100": "False",
+      "101": "8",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "600",
+      "112": "600",
+      "113": "600",
+      "2": "0",
+      "254": "0",
+      "255": "False",
+      "80": "None",
+      "90": "False",
+      "91": "50",
+      "92": "10",
+      "Reset": "False",
+      "Security Node": "false",
+      "Switch All": "On and Off Enabled",
+      "description": "Binary Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "DSC18103 Micro Smart Switch (2nd Edition)",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "1": {
+        "datatype": "enum",
+        "description": "1: Report type"
+      },
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type G1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type G2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type G3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Default Group Time"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send interval G1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send interval G2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send interval G3"
+      },
+      "2": {
+        "datatype": "number",
+        "description": "2: Blinking behavior"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enable Wattage Reports"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Wattage threshold"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Wattage threshold percent"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "3",
+    "nodeId": "3",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.812-0700"
+  },
+  {
+    "address": "test/openzwave/10/$node",
+    "attr": {
+      "Basic": "0",
+      "Security Node": "false",
+      "Wake-up Interval": "3600",
+      "description": "Basic Wall Controller",
+      "softwareVersion": "1.5.0",
+      "type": "Unknown Type"
+    },
+    "config": {
+      "Basic": {
+        "datatype": "number",
+        "description": "Basic"
+      },
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "10",
+    "nodeId": "10",
+    "status": {
+      "state": "sleeping"
+    },
+    "timestamp": "2020-09-26T20:46:15.378-0700"
+  },
+  {
+    "address": "test/openzwave/9/$node",
+    "attr": {
+      "100": "False",
+      "101": "0",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "3",
+      "112": "600",
+      "113": "600",
+      "20": "Last status (Default)",
+      "200": "Aeon Labs Standard (Default)",
+      "21": "Reserved",
+      "252": "Disable",
+      "254": "0",
+      "255": "False",
+      "3": "Active Overload Protection (Default)",
+      "80": "Nothing (Default)",
+      "81": "The LED will follow the status (on/off) of its load. (Default)",
+      "83": "14524637",
+      "84": "5263440",
+      "90": "False",
+      "91": "25",
+      "92": "5",
+      "Color Channels": "28",
+      "Dimming Duration": "255",
+      "Frame Count": "0",
+      "Ignore Start Level": "True",
+      "Powerlevel": "Normal",
+      "Report": "False",
+      "Reset": "False",
+      "Security Node": "false",
+      "Set Powerlevel": "False",
+      "Start Level": "0",
+      "Switch All": "Disabled",
+      "Test": "False",
+      "Test Node": "0",
+      "Test Powerlevel": "Normal",
+      "Timeout": "0",
+      "description": "On/Off Power Switch",
+      "manufacturer": "AEON Labs",
+      "model": "ZW096 Smart Switch 6",
+      "softwareVersion": "1.5.0",
+      "type": "On/Off Power Switch"
+    },
+    "config": {
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Default Group Reports"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Report type sent in Reporting Group 1"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Report type sent in Reporting Group 2"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Report type sent in Reporting Group 3"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Set 111 to 113 to default"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Send Interval for Reporting Group 1"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Send Interval for Reporting Group 2"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Send Interval for Reporting Group 3"
+      },
+      "20": {
+        "datatype": "enum",
+        "description": "20: Output Load Status"
+      },
+      "200": {
+        "datatype": "enum",
+        "description": "200: Partner ID"
+      },
+      "21": {
+        "datatype": "enum",
+        "description": "21: RGB Led Color for Testing"
+      },
+      "252": {
+        "datatype": "enum",
+        "description": "252: Configuration Locked"
+      },
+      "254": {
+        "datatype": "number",
+        "description": "254: Device tag"
+      },
+      "255": {
+        "datatype": "boolean",
+        "description": "255: Reset device"
+      },
+      "3": {
+        "datatype": "enum",
+        "description": "3: Current Overload Protection"
+      },
+      "80": {
+        "datatype": "enum",
+        "description": "80: Notification status"
+      },
+      "81": {
+        "datatype": "enum",
+        "description": "81: Configure the state of the LED"
+      },
+      "90": {
+        "datatype": "boolean",
+        "description": "90: Enables/disables parameter 91/92"
+      },
+      "91": {
+        "datatype": "number",
+        "description": "91: Minimum Change to send Report (Watt)"
+      },
+      "92": {
+        "datatype": "number",
+        "description": "92: Minimum Change to send Report (%)"
+      },
+      "Color Channels": {
+        "datatype": "number",
+        "description": "Color Channels"
+      },
+      "Dimming Duration": {
+        "datatype": "number",
+        "description": "Dimming Duration"
+      },
+      "Frame Count": {
+        "datatype": "number",
+        "description": "Frame Count"
+      },
+      "Ignore Start Level": {
+        "datatype": "boolean",
+        "description": "Ignore Start Level"
+      },
+      "Powerlevel": {
+        "datatype": "enum",
+        "description": "Powerlevel"
+      },
+      "Report": {
+        "datatype": "boolean",
+        "description": "Report"
+      },
+      "Reset": {
+        "datatype": "boolean",
+        "description": "Reset"
+      },
+      "Set Powerlevel": {
+        "datatype": "boolean",
+        "description": "Set Powerlevel"
+      },
+      "Start Level": {
+        "datatype": "number",
+        "description": "Start Level"
+      },
+      "Switch All": {
+        "datatype": "enum",
+        "description": "Switch All"
+      },
+      "Test": {
+        "datatype": "boolean",
+        "description": "Test"
+      },
+      "Test Node": {
+        "datatype": "number",
+        "description": "Test Node"
+      },
+      "Test Powerlevel": {
+        "datatype": "enum",
+        "description": "Test Powerlevel"
+      },
+      "Timeout": {
+        "datatype": "number",
+        "description": "Timeout"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "9",
+    "nodeId": "9",
+    "status": {
+      "lastError": "Timeout",
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.813-0700"
+  },
+  {
+    "address": "test/openzwave/11/$node",
+    "attr": {
+      "100": "False",
+      "101": "241",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "3600",
+      "112": "3600",
+      "113": "3600",
+      "2": "Disable",
+      "201": "1",
+      "202": "0",
+      "203": "0",
+      "204": "0",
+      "252": "Disable",
+      "255": "Normal",
+      "3": "240",
+      "39": "20",
+      "4": "Enabled level 5",
+      "40": "Disabled",
+      "41": "20",
+      "42": "10",
+      "43": "100",
+      "44": "10",
+      "45": "2",
+      "46": "Disabled",
+      "48": "0",
+      "49": "71681",
+      "5": "Basic Set",
+      "50": "1",
+      "51": "60",
+      "52": "50",
+      "53": "1000",
+      "54": "100",
+      "55": "8",
+      "56": "4",
+      "57": "5121",
+      "58": "5",
+      "59": "10",
+      "60": "2",
+      "61": "0",
+      "64": "Celsius",
+      "8": "30",
+      "81": "Enable LED blinking",
+      "9": "USB power, sleeping mode after re-power on",
+      "Frame Count": "0",
+      "Powerlevel": "Normal",
+      "Report": "False",
+      "Security Node": "false",
+      "Set Powerlevel": "False",
+      "Test": "False",
+      "Test Node": "0",
+      "Test Powerlevel": "Normal",
+      "Timeout": "0",
+      "Wake-up Interval": "3600",
+      "description": "Home Security Sensor",
+      "manufacturer": "AEON Labs",
+      "model": "ZW100 MultiSensor 6",
+      "softwareVersion": "1.5.0",
+      "type": "Home Security Sensor"
+    },
+    "config": {
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Reset Params 101-103 to Default"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Group 1 Reports"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Group 2 Reports"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Group 3 Reports"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Reset Params 111-113 to Default"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Group 1 Interval"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Group 2 Interval"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Group 3 Interval"
+      },
+      "2": {
+        "datatype": "enum",
+        "description": "2: Wake up 10 minutes on Power On"
+      },
+      "201": {
+        "datatype": "number",
+        "description": "201: Temperature Calibration"
+      },
+      "202": {
+        "datatype": "number",
+        "description": "202: Humidity Calibration"
+      },
+      "203": {
+        "datatype": "number",
+        "description": "203: Luminance Calibration"
+      },
+      "204": {
+        "datatype": "number",
+        "description": "204: Ultraviolet Calibration"
+      },
+      "252": {
+        "datatype": "enum",
+        "description": "252: Enable/disable Lock Configuration"
+      },
+      "255": {
+        "datatype": "enum",
+        "description": "255: Reset To Factory Defaults"
+      },
+      "3": {
+        "datatype": "number",
+        "description": "3: On time"
+      },
+      "39": {
+        "datatype": "number",
+        "description": "39: Low Battery"
+      },
+      "4": {
+        "datatype": "enum",
+        "description": "4: Enable Motion Sensor"
+      },
+      "40": {
+        "datatype": "enum",
+        "description": "40: Report Only On Thresholds"
+      },
+      "41": {
+        "datatype": "number",
+        "description": "41: Temperature Reporting Threshold"
+      },
+      "42": {
+        "datatype": "number",
+        "description": "42: Humidity Reporting Threshold"
+      },
+      "43": {
+        "datatype": "number",
+        "description": "43: Luminance Reporting Threshold"
+      },
+      "44": {
+        "datatype": "number",
+        "description": "44: Battery Reporting Threshold"
+      },
+      "46": {
+        "datatype": "enum",
+        "description": "46: Low Temp Alarm"
+      },
+      "48": {
+        "datatype": "number",
+        "description": "48: Enable/disable to send a report on Threshold"
+      },
+      "49": {
+        "datatype": "number",
+        "description": "49: Set the upper limit value of temperature sensor"
+      },
+      "5": {
+        "datatype": "enum",
+        "description": "5: Command Options"
+      },
+      "50": {
+        "datatype": "number",
+        "description": "50: Set the lower limit value of temperature sensor"
+      },
+      "51": {
+        "datatype": "number",
+        "description": "51: Set the upper limit value of humidity sensor"
+      },
+      "52": {
+        "datatype": "number",
+        "description": "52: Set the lower limit value of humidity sensor"
+      },
+      "53": {
+        "datatype": "number",
+        "description": "53: Set the upper limit value of Lighting sensor"
+      },
+      "54": {
+        "datatype": "number",
+        "description": "54: Set the lower limit value of Lighting sensor"
+      },
+      "55": {
+        "datatype": "number",
+        "description": "55: Set the upper limit value of ultraviolet sensor"
+      },
+      "56": {
+        "datatype": "number",
+        "description": "56: Set the lower limit value of ultraviolet sensor"
+      },
+      "57": {
+        "datatype": "number",
+        "description": "57: Set the recover limit value of temperature sensor"
+      },
+      "58": {
+        "datatype": "number",
+        "description": "58: Set the recover limit value of humidity sensor"
+      },
+      "59": {
+        "datatype": "number",
+        "description": "59: Set the recover limit value of Lighting sensor"
+      },
+      "60": {
+        "datatype": "number",
+        "description": "60: Set the recover limit value of Ultraviolet sensor"
+      },
+      "64": {
+        "datatype": "enum",
+        "description": "64: Temperature scale"
+      },
+      "8": {
+        "datatype": "number",
+        "description": "8: Awake timeout"
+      },
+      "81": {
+        "datatype": "enum",
+        "description": "81: LED blinking report"
+      },
+      "Frame Count": {
+        "datatype": "number",
+        "description": "Frame Count"
+      },
+      "Powerlevel": {
+        "datatype": "enum",
+        "description": "Powerlevel"
+      },
+      "Report": {
+        "datatype": "boolean",
+        "description": "Report"
+      },
+      "Set Powerlevel": {
+        "datatype": "boolean",
+        "description": "Set Powerlevel"
+      },
+      "Test": {
+        "datatype": "boolean",
+        "description": "Test"
+      },
+      "Test Node": {
+        "datatype": "number",
+        "description": "Test Node"
+      },
+      "Test Powerlevel": {
+        "datatype": "enum",
+        "description": "Test Powerlevel"
+      },
+      "Timeout": {
+        "datatype": "number",
+        "description": "Timeout"
+      },
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "11",
+    "nodeId": "11",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.813-0700"
+  },
+  {
+    "address": "test/openzwave/4/$node",
+    "attr": {
+      "100": "False",
+      "101": "241",
+      "102": "0",
+      "103": "0",
+      "110": "False",
+      "111": "3600",
+      "112": "3600",
+      "113": "3600",
+      "2": "Disable",
+      "201": "1",
+      "202": "0",
+      "203": "0",
+      "204": "0",
+      "252": "Disable",
+      "255": "Normal",
+      "3": "240",
+      "39": "20",
+      "4": "Enabled level 5",
+      "40": "Disabled",
+      "41": "20",
+      "42": "10",
+      "43": "100",
+      "44": "10",
+      "45": "2",
+      "46": "Disabled",
+      "48": "0",
+      "49": "71681",
+      "5": "Basic Set",
+      "50": "1",
+      "51": "60",
+      "52": "50",
+      "53": "1000",
+      "54": "100",
+      "55": "8",
+      "56": "4",
+      "57": "5121",
+      "58": "5",
+      "59": "10",
+      "60": "2",
+      "61": "0",
+      "64": "Celsius",
+      "8": "30",
+      "81": "Enable LED blinking",
+      "9": "USB power, sleeping mode after re-power on",
+      "Frame Count": "0",
+      "Powerlevel": "Normal",
+      "Report": "False",
+      "Security Node": "false",
+      "Set Powerlevel": "False",
+      "Test": "False",
+      "Test Node": "0",
+      "Test Powerlevel": "Normal",
+      "Timeout": "0",
+      "Wake-up Interval": "3600",
+      "description": "Home Security Sensor",
+      "manufacturer": "AEON Labs",
+      "model": "ZW100 MultiSensor 6",
+      "softwareVersion": "1.5.0",
+      "type": "Home Security Sensor"
+    },
+    "config": {
+      "100": {
+        "datatype": "boolean",
+        "description": "100: Reset Params 101-103 to Default"
+      },
+      "101": {
+        "datatype": "number",
+        "description": "101: Group 1 Reports"
+      },
+      "102": {
+        "datatype": "number",
+        "description": "102: Group 2 Reports"
+      },
+      "103": {
+        "datatype": "number",
+        "description": "103: Group 3 Reports"
+      },
+      "110": {
+        "datatype": "boolean",
+        "description": "110: Reset Params 111-113 to Default"
+      },
+      "111": {
+        "datatype": "number",
+        "description": "111: Group 1 Interval"
+      },
+      "112": {
+        "datatype": "number",
+        "description": "112: Group 2 Interval"
+      },
+      "113": {
+        "datatype": "number",
+        "description": "113: Group 3 Interval"
+      },
+      "2": {
+        "datatype": "enum",
+        "description": "2: Wake up 10 minutes on Power On"
+      },
+      "201": {
+        "datatype": "number",
+        "description": "201: Temperature Calibration"
+      },
+      "202": {
+        "datatype": "number",
+        "description": "202: Humidity Calibration"
+      },
+      "203": {
+        "datatype": "number",
+        "description": "203: Luminance Calibration"
+      },
+      "204": {
+        "datatype": "number",
+        "description": "204: Ultraviolet Calibration"
+      },
+      "252": {
+        "datatype": "enum",
+        "description": "252: Enable/disable Lock Configuration"
+      },
+      "255": {
+        "datatype": "enum",
+        "description": "255: Reset To Factory Defaults"
+      },
+      "3": {
+        "datatype": "number",
+        "description": "3: On time"
+      },
+      "39": {
+        "datatype": "number",
+        "description": "39: Low Battery"
+      },
+      "4": {
+        "datatype": "enum",
+        "description": "4: Enable Motion Sensor"
+      },
+      "40": {
+        "datatype": "enum",
+        "description": "40: Report Only On Thresholds"
+      },
+      "41": {
+        "datatype": "number",
+        "description": "41: Temperature Reporting Threshold"
+      },
+      "42": {
+        "datatype": "number",
+        "description": "42: Humidity Reporting Threshold"
+      },
+      "43": {
+        "datatype": "number",
+        "description": "43: Luminance Reporting Threshold"
+      },
+      "44": {
+        "datatype": "number",
+        "description": "44: Battery Reporting Threshold"
+      },
+      "46": {
+        "datatype": "enum",
+        "description": "46: Low Temp Alarm"
+      },
+      "48": {
+        "datatype": "number",
+        "description": "48: Enable/disable to send a report on Threshold"
+      },
+      "49": {
+        "datatype": "number",
+        "description": "49: Set the upper limit value of temperature sensor"
+      },
+      "5": {
+        "datatype": "enum",
+        "description": "5: Command Options"
+      },
+      "50": {
+        "datatype": "number",
+        "description": "50: Set the lower limit value of temperature sensor"
+      },
+      "51": {
+        "datatype": "number",
+        "description": "51: Set the upper limit value of humidity sensor"
+      },
+      "52": {
+        "datatype": "number",
+        "description": "52: Set the lower limit value of humidity sensor"
+      },
+      "53": {
+        "datatype": "number",
+        "description": "53: Set the upper limit value of Lighting sensor"
+      },
+      "54": {
+        "datatype": "number",
+        "description": "54: Set the lower limit value of Lighting sensor"
+      },
+      "55": {
+        "datatype": "number",
+        "description": "55: Set the upper limit value of ultraviolet sensor"
+      },
+      "56": {
+        "datatype": "number",
+        "description": "56: Set the lower limit value of ultraviolet sensor"
+      },
+      "57": {
+        "datatype": "number",
+        "description": "57: Set the recover limit value of temperature sensor"
+      },
+      "58": {
+        "datatype": "number",
+        "description": "58: Set the recover limit value of humidity sensor"
+      },
+      "59": {
+        "datatype": "number",
+        "description": "59: Set the recover limit value of Lighting sensor"
+      },
+      "60": {
+        "datatype": "number",
+        "description": "60: Set the recover limit value of Ultraviolet sensor"
+      },
+      "64": {
+        "datatype": "enum",
+        "description": "64: Temperature scale"
+      },
+      "8": {
+        "datatype": "number",
+        "description": "8: Awake timeout"
+      },
+      "81": {
+        "datatype": "enum",
+        "description": "81: LED blinking report"
+      },
+      "Frame Count": {
+        "datatype": "number",
+        "description": "Frame Count"
+      },
+      "Powerlevel": {
+        "datatype": "enum",
+        "description": "Powerlevel"
+      },
+      "Report": {
+        "datatype": "boolean",
+        "description": "Report"
+      },
+      "Set Powerlevel": {
+        "datatype": "boolean",
+        "description": "Set Powerlevel"
+      },
+      "Test": {
+        "datatype": "boolean",
+        "description": "Test"
+      },
+      "Test Node": {
+        "datatype": "number",
+        "description": "Test Node"
+      },
+      "Test Powerlevel": {
+        "datatype": "enum",
+        "description": "Test Powerlevel"
+      },
+      "Timeout": {
+        "datatype": "number",
+        "description": "Timeout"
+      },
+      "Wake-up Interval": {
+        "datatype": "number",
+        "description": "Wake-up Interval"
+      },
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "4",
+    "nodeId": "4",
+    "status": {
+      "state": "Complete"
+    },
+    "timestamp": "2020-09-26T20:47:35.812-0700"
+  },
+  {
+    "address": "test/openzwave/255/$node",
+    "attr": {
+      "Security Node": "false",
+      "description": "Unknown",
+      "name": "OpenZwave controller",
+      "softwareVersion": "1.5.0",
+      "type": ""
+    },
+    "config": {
+      "name": {
+        "datatype": "string",
+        "description": "Human friendly node name"
+      },
+      "publishEvent": {
+        "datatype": "string",
+        "default": "false",
+        "description": "Enable publishing outputs as event"
+      },
+      "publishHistory": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing output history"
+      },
+      "publishLatest": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing latest output"
+      },
+      "publishRaw": {
+        "datatype": "boolean",
+        "default": "true",
+        "description": "Enable publishing raw outputs"
+      }
+    },
+    "hwAddress": "255",
+    "nodeId": "255",
+    "status": {
+      "state": "ready"
+    },
+    "timestamp": "2020-09-26T20:47:35.814-0700"
+  }
+]

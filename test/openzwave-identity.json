@@ -1,0 +1,14 @@
+{
+  "address": "test/openzwave/$identity",
+  "domain": "test",
+  "issuerId": "openzwave",
+  "location": "local",
+  "organization": "",
+  "publicKey": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEv1eAgTAKrIApwq/5QXhHB4NnuSd9\n0Et0Rh24e6BjbI8SxKMaAbE+SKJHq/VLqpPONUM9tqEcolCO2t84P4VJcg==\n-----END PUBLIC KEY-----\n",
+  "publisherId": "openzwave",
+  "validUntil": "2021-09-26T15:45:53.084-0700",
+  "signature": "MEQCICOb_TaKJsxNtCjtQywMvR45pXWO_2PNlkDaj9ld3VEvAiAUfoQ79mzGKTfSWpXQ127ZkcjuEvkH13QrG8b_Ogmzng==",
+  "timestamp": "2020-09-26T15:45:53.084-0700",
+  "privateKey": "-----BEGIN PRIVATE KEY-----\nMHcCAQEEID5bdD4n3OrNLnuS0CJXMMICzGEhNXranDYvXCzije4HoAoGCCqGSM49\nAwEHoUQDQgAEv1eAgTAKrIApwq/5QXhHB4NnuSd90Et0Rh24e6BjbI8SxKMaAbE+\nSKJHq/VLqpPONUM9tqEcolCO2t84P4VJcg==\n-----END PRIVATE KEY-----\n",
+  "sender": ""
+ }

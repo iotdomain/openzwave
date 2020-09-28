@@ -1,0 +1,8 @@
+# messenger: "DummyMessenger"
+messenger: "MQTTMessenger"
+
+server: "localhost"
+domain: "test"
+
+# message signing to use, default is true
+signing: false # 

@@ -1,0 +1,18 @@
+# Optional configuration for openzwave publisher
+
+# gateway: /dev/ttyUSB0     # controller address, default is automatic 
+
+# ozwLogLevel: "info"      # Openzwave library logging, default is "warning"
+# ozwConfigFolder: "/usr/local/etc/openzwave" # openzwave configuration folder
+# ozwEnableSIS: true      # Set controller as the Static ID Service in multi-controller networks, only 1 controller can be SIS, default is false
+# includeZWInfo: true     # Include additional ZWave attributes with the node attributes, default is false
+
+
+#--- Publisher configuration 
+#cacheNodes: true        # restore previously discovered nodes on start. Default is false
+#cachePublishers: true   # restore previously discovered publishers on start. Default is false
+#cacheFolder: ""         # location to save discovered nodes and publishers. Default is current directory.
+#domain: ""              # publication domain. Default is messengerConfig.yaml::domain
+#publisherID: "openzwave"    # ID of this publisher, default is AppID (openzwave)
+loglevel: "info"        # publisher logging level. Default is "warning"
+#logfile: ""             # log to file. Default is {publisherID}.log
