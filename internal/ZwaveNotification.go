@@ -9,13 +9,15 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// handleNotification from the openzwave controller and update the nodes and sensors
-func (app *OpenZWaveApp) handleNotification(ozwAPI *OzwAPI, notification *goopenzwave.Notification) {
+// ZWaveNotification is the main entry point for all OZW notifications
+// This dispatches the notification to the function to handle it.
+func (app *OpenZWaveApp) ZWaveNotification(ozwAPI *OzwAPI, notification *goopenzwave.Notification) {
 	pub := app.pub
 	//adapter.log.Debugf("handleNotification: Received notification: %v", notification)
 	notificationName := notification.String()
 	nodeHWID := fmt.Sprint(notification.NodeID)
 	device := pub.GetNodeByHWID(nodeHWID)
+
 	if notification.ValueID != nil {
 		valueName := notification.ValueID.GetLabel()
 		// ignore certain noisy values
@@ -23,10 +25,10 @@ func (app *OpenZWaveApp) handleNotification(ozwAPI *OzwAPI, notification *goopen
 			return
 		}
 		value := notification.ValueID.GetAsString()
-		logrus.Infof("OpenZWaveApp.handleNotification: type=%v, node=%s, label=%s, value: %v",
+		logrus.Infof("ZWaveNotification: type=%v, node=%s, label=%s, value: %v",
 			notification.Type, nodeHWID, valueName, value)
 	} else {
-		logrus.Infof("OpenZWaveApp.handleNotification: type=%v, node=%s", notification.Type, nodeHWID)
+		logrus.Infof("ZWaveNotification: type=%v, node=%s", notification.Type, nodeHWID)
 		// FIXME: missing notification when device state changes (UPDATE_STATE_NODE_INFO_RECEIVED)
 	}
 	// Switch based on notification type.
@@ -34,32 +36,32 @@ func (app *OpenZWaveApp) handleNotification(ozwAPI *OzwAPI, notification *goopen
 
 	case goopenzwave.NotificationTypeButtonOff, goopenzwave.NotificationTypeButtonOn:
 		//adapter.Logger().Infof("handleNotification: Controller Command. Event=%v, notification=%v", notification.Event, notification.Notification)
-		app.updateValue(notification.ValueID)
+		app.ZWaveUpdateOutputValue(notification.ValueID)
 
 	case goopenzwave.NotificationTypeControllerCommand:
-		logrus.Infof("OpenZWaveApp.handleNotification: Controller Command. Event=%v, notification=%v",
+		logrus.Infof("ZWaveNotification: Controller Command. Event=%v, notification=%v",
 			notification.Event, notification.Notification)
 		if *notification.Notification == goopenzwave.NotificationCodeMsgComplete {
 			// How to associate this with the request?
 
 		} else if *notification.Notification == goopenzwave.NotificationCodeTimeout {
-			pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateError, fmt.Sprint(notification.Notification))
+			pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateError, fmt.Sprint(notification.Notification))
 		}
 
 	case goopenzwave.NotificationTypeCreateButton:
-		app.discoverZwaveNode(notification)
+		app.ZwaveDiscoverNode(notification)
 
 	case goopenzwave.NotificationTypeDeleteButton:
-		app.removeDevice(notification)
+		app.ZWaveRemoveNode(notification)
 
 	case goopenzwave.NotificationTypeDriverReady:
-		app.discoverZWaveController(notification)
+		app.ZWaveDiscoverController(notification)
 
 	case goopenzwave.NotificationTypeAwakeNodesQueried,
 		goopenzwave.NotificationTypeAllNodesQueried,
 		goopenzwave.NotificationTypeAllNodesQueriedSomeDead:
-		logrus.Info("OpenZWaveApp.handleNotification: Nodes Queried")
-		app.discoverZWaveController(notification)
+		logrus.Info("ZWaveNotification: Nodes Queried")
+		app.ZWaveDiscoverController(notification)
 
 	case goopenzwave.NotificationTypeGroup:
 		// group association updated
@@ -83,45 +85,74 @@ func (app *OpenZWaveApp) handleNotification(ozwAPI *OzwAPI, notification *goopen
 		}
 
 	case goopenzwave.NotificationTypeNodeAdded: // A previously seen device is added after CC is known, eg after restart
-		app.discoverZwaveNode(notification)
+		app.ZwaveDiscoverNode(notification)
 
 	case goopenzwave.NotificationTypeNodeEvent:
 		// This is commonly caused when a node sends a Basic_Set command to the controller.
 		// There is no ValueId in the notification so not much we can do here
-		logrus.Infof("OpenZWaveApp.handleNotification: Node %s NotificationTypeNodeEvent. Ignored", nodeHWID)
+		logrus.Infof("ZWaveNotification: Node %s NotificationTypeNodeEvent. Ignored", nodeHWID)
 
 	case goopenzwave.NotificationTypeNodeNew: // A new device previously unseen is added
-		app.discoverZwaveNode(notification)
+		app.ZwaveDiscoverNode(notification)
 
 	case goopenzwave.NotificationTypeNodeQueriesComplete:
-		app.discoverZwaveNode(notification)
+		app.ZwaveDiscoverNode(notification)
 
 	case goopenzwave.NotificationTypeNodeRemoved: // Removed from network or because the app is closing?
 		// ignored until we can distinguish between removal and app closing
 		// TODO: remove node. Note its values are removed first
-		app.removeDevice(notification)
+		app.ZWaveRemoveNode(notification)
 
 	case goopenzwave.NotificationTypeNodeNaming:
 		//One of the node names has changed (name, manufacturer, product).
-		app.DiscoverZwaveNodeAttr(notification)
+		app.ZWaveUpdateNode(notification)
 
 	case goopenzwave.NotificationTypeNodeProtocolInfo:
 		// Basic node information has been received, such as whether the node is a listening device, a routing device and
 		// its baud rate and basic, generic and specific types.
 		// It is after this notification that you can call Manager::GetNodeType to obtain a label containing the device description.
-		app.discoverZwaveNode(notification)
+		app.ZwaveDiscoverNode(notification)
 
 	case goopenzwave.NotificationTypeValueAdded:
-		// A sensor, info or configuration value has been added. Could be from cache.
-		app.discoverZWaveValue(notification)
+		{
+			// An output, attribute or configuration value has been added. Could be from cache.
+			// Determine which device and output this is about
+			// nodeHWID := fmt.Sprint(notification.NodeID)
 
-	case goopenzwave.NotificationTypeValueChanged:
+			zwValue := notification.ValueID
+			zwGenre := zwValue.Genre
+			zwValueLabel := zwValue.GetLabel()
+			zwValueWritable := !zwValue.IsReadOnly()
+
+			// try to map the zwaveLabel to its node outputType so we know if it is a known output
+			outputType := zwaveToOutputTypeMap[zwValueLabel]
+
+			//if zwGenre == goopenzwave.ValueIDGenreUser && sensorType != "" {
+			if outputType != "" {
+				// UserGenres are either sensors/actuators, or config for a CC
+				// Unfortunately determining the difference is non-deterministic.
+				// Sooo, use a list of known labels to determine what is an actual output.
+				// Note 1: the zwValueLabel can be modified so there is no guarantee this follows a standard naming
+				// Note 2: in case of a real but unknown sensor or actuator, it shows as a config value
+				app.ZWaveDiscoverOutput(nodeHWID, outputType, zwValue)
+			} else if zwGenre == goopenzwave.ValueIDGenreUser {
+				// Assume user genre's are attributes
+				app.ZWaveUpdateNodeAttr(nodeHWID, zwValue)
+			} else if zwGenre == goopenzwave.ValueIDGenreConfig || zwValueWritable {
+				// Anything else that is writable is configuration
+				app.ZWaveDiscoverNodeConfigAttr(zwValue)
+			} else {
+				// what remains are info values
+				app.ZWaveUpdateNodeAttr(nodeHWID, zwValue)
+			}
+		}
+	case goopenzwave.NotificationTypeValueChanged, goopenzwave.NotificationTypeValueRefreshed:
 		// A sensor, info or configuration value has changed value
-		app.updateValue(notification.ValueID)
+		app.ZWaveUpdateValue(notification.ValueID)
 
-	case goopenzwave.NotificationTypeValueRefreshed:
-		// A device/sensor value is updated, not neccesarily changed
-		app.updateValue(notification.ValueID)
+		// case :goopenzwave.NotificationTypeValueRefreshed
+		// A device/output value is updated, not neccesarily changed
+		// app.ZWaveUpdateValue(notification.ValueID)
 
 	case goopenzwave.NotificationTypeValueRemoved:
 		// Result of a removed node. Just handle the node removal and remove its sensors
@@ -130,29 +161,23 @@ func (app *OpenZWaveApp) handleNotification(ozwAPI *OzwAPI, notification *goopen
 	case goopenzwave.NotificationTypeNotification:
 		// Some error occurred
 		notificationCode := *notification.Notification
-		logrus.Warningf("OpenZWaveApp.handleNotification: Node %s: notification: %v", nodeHWID, notificationCode)
+		logrus.Warningf("ZWaveNotification: Node %s: notification: %v", nodeHWID, notificationCode)
 		if device != nil {
 			if notificationCode == goopenzwave.NotificationCodeTimeout {
-				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateError, fmt.Sprint(notificationCode))
+				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateError, fmt.Sprint(notificationCode))
 			} else if notificationCode == goopenzwave.NotificationCodeDead {
-				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateLost, fmt.Sprint(notificationCode))
+				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateLost, fmt.Sprint(notificationCode))
 			} else if notificationCode == goopenzwave.NotificationCodeMsgComplete {
 				// complete transaction
 			} else if notificationCode == goopenzwave.NotificationCodeSleep {
-				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateSleeping, "")
+				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateSleeping, "")
 			} else if notificationCode == goopenzwave.NotificationCodeAwake {
-				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateReady, "")
+				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateReady, "")
 			} else if notificationCode == goopenzwave.NotificationCodeAlive {
-				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeStateReady, "")
+				pub.UpdateNodeErrorStatus(nodeHWID, types.NodeRunStateReady, "")
 			}
 		}
 	default:
-		logrus.Debugf("OpenZWaveApp.handleNotification: Node %s: event %s. Ignored.", nodeHWID, notificationName)
+		logrus.Debugf("ZWaveNotification: Node %s: event %s. Ignored.", nodeHWID, notificationName)
 	}
-}
-
-func (app *OpenZWaveApp) removeDevice(notification *goopenzwave.Notification) {
-	nodeHWID := fmt.Sprint(notification.NodeID)
-	app.pub.DeleteNode(nodeHWID)
-	logrus.Warningf("OpenZWaveAdapter.removeDevice. Node %s removed", nodeHWID)
 }

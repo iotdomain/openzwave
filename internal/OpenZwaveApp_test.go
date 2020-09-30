@@ -17,7 +17,7 @@ var messengerConfig = &messaging.MessengerConfig{Domain: "test"}
 var appConfig = &internal.OpenZwaveAppConfig{}
 
 func TestLoadConfig1(t *testing.T) {
-	pub, err := publisher.NewAppPublisher(internal.AppID, TestConfigFolder, appConfig, true)
+	pub, err := publisher.NewAppPublisher(internal.AppID, TestConfigFolder, appConfig, TestConfigFolder, true)
 	app := internal.NewOpenZwaveApp(appConfig, pub)
 	assert.NoError(t, err)
 	assert.NotNil(t, app)
@@ -26,14 +26,14 @@ func TestLoadConfig1(t *testing.T) {
 
 // Test connecting to OZW. This needs an adapter on /dev/ttyACM0 (as per test config)
 func TestStartStop(t *testing.T) {
-	pub, err := publisher.NewAppPublisher(internal.AppID, TestConfigFolder, appConfig, true)
+	pub, err := publisher.NewAppPublisher(internal.AppID, TestConfigFolder, appConfig, TestConfigFolder, true)
 	app := internal.NewOpenZwaveApp(appConfig, pub)
 	assert.NoError(t, err)
 	err = app.Start()
 	assert.NoError(t, err)
 	if err == nil {
 		t.Log("Sleep 660")
-		time.Sleep(25 * 10 * time.Second)
+		time.Sleep(660 * 10 * time.Second)
 	}
 	t.Log("Stopping openzwave")
 	app.Stop()

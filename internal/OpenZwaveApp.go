@@ -8,6 +8,7 @@ import (
 
 	"github.com/iotdomain/iotdomain-go/publisher"
 	"github.com/iotdomain/iotdomain-go/types"
+	"github.com/jimjibone/goopenzwave"
 	"github.com/sirupsen/logrus"
 )
 
@@ -28,15 +29,12 @@ type OpenZWaveApp struct {
 	gwHWID string // the gateway node HWID to use
 
 	ozwAPI            *OzwAPI
-	ozwHomeID         uint32                    // OZW Node ID
-	attrNameByValueID map[uint64]types.NodeAttr // identify attr and config from OZW value IDs
-	inputIDByValueID  map[uint64]string         // input ID by zw value ID. For actuator update from OZW
-	outputIDByValueID map[uint64]string         // output ID by zw valueID
-	valueIDByInputID  map[string]uint64         // zw value ID by input ID. For switches updates from mqtt bus
-	// valueIDByConfigID map[string]uint64         // zw value ID by node [hwAddress.ConfigAttr]
-	// zwValueByAttr   map[*nodes.ConfigAttr]*goopenzwave.ValueID // For config updates from mqtt bus
-
-	//controllerCommandSensor *nodes.NodeInOutput // virtual button running the current controller command
+	ozwHomeID         uint32                          // OZW Node ID
+	attrNameByValueID map[uint64]types.NodeAttr       // identify attr and config from OZW value IDs
+	inputIDByValueID  map[uint64]string               // input ID by zw value ID. For actuator update from OZW
+	outputIDByValueID map[uint64]string               // output ID by zw valueID
+	valueIDByInputID  map[string]uint64               // zw value ID by input ID. For switches updates from mqtt bus
+	zwValueByAttrID   map[string]*goopenzwave.ValueID // determine ZWValue for config command
 }
 
 // Application constants
@@ -68,9 +66,8 @@ func (app *OpenZWaveApp) CheckAlive() {
 	isAlive := app.ozwAPI.IsAlive()
 	if !isAlive {
 		logrus.Error("OpenZWaveAdapter.CheckAlive. ZWave Controller Connection Lost. Stopping...")
-		// Gateway connection dropped. Restart needed. (when used with daemon)
+		// Controller connection dropped. Restart needed. (when used with daemon)
 		syscall.Kill(syscall.Getpid(), syscall.SIGINT)
-		//adapter.Stop()
 	}
 }
 
@@ -170,22 +167,22 @@ func (app *OpenZWaveApp) Start() error {
 	app.pub.Start()
 
 	// app.pub.UpdateNodeStatus(gwID, types.PublisherStateInitializing)
-	app.pub.SetPublisherStatus(types.PublisherStateInitializing)
+	app.pub.SetPublisherStatus(types.PublisherRunStateInitializing)
 	//
 	err := app.ozwAPI.Connect(
 		gateWayAddress,
 		ozwLogLevel,
 		ozwConfigFolder,
 		ozwEnableSIS,
-		app.handleNotification)
+		app.ZWaveNotification)
 
 	if err != nil {
 		logrus.Error("OpenZWaveApp.Start: Failed starting openzwave")
-		app.pub.SetPublisherStatus(types.PublisherStateFailed)
+		app.pub.SetPublisherStatus(types.PublisherRunStateFailed)
 		//adapter.UpdateLastSeen(adapter.GatewayNode)
 		//adapter.publisher.PublishDeviceStatus(myzone.PublisherNode)
 	} else {
-		app.pub.SetPublisherStatus(types.PublisherStateConnected)
+		app.pub.SetPublisherStatus(types.PublisherRunStateConnected)
 	}
 	return err
 }
@@ -195,7 +192,7 @@ func (app *OpenZWaveApp) Stop() {
 	logrus.Warningf("OpenZWaveApp.Stop: Stopping openzwave")
 
 	app.ozwAPI.Disconnect()
-	app.pub.SetPublisherStatus(types.PublisherStateDisconnected)
+	app.pub.SetPublisherStatus(types.PublisherRunStateDisconnected)
 	app.pub.Stop()
 }
 
@@ -222,10 +219,11 @@ func NewOpenZwaveApp(config *OpenZwaveAppConfig, pub *publisher.Publisher) *Open
 		// ignoreList: make(map[string]bool),
 		pub:               pub,
 		ozwAPI:            ozwAPI,
-		attrNameByValueID: map[uint64]types.NodeAttr{}, // identify attr and config from OZW value IDs
-		inputIDByValueID:  map[uint64]string{},         // input ID by zw value ID. For actuator update from OZW
-		outputIDByValueID: map[uint64]string{},         // output ID by zw valueID
-		valueIDByInputID:  map[string]uint64{},         // zw value ID by input ID. For switches updates from mqtt bus
+		attrNameByValueID: map[uint64]types.NodeAttr{},       // identify attr and config from OZW value IDs
+		inputIDByValueID:  map[uint64]string{},               // input ID by zw value ID. For actuator update from OZW
+		outputIDByValueID: map[uint64]string{},               // output ID by zw valueID
+		valueIDByInputID:  map[string]uint64{},               // zw value ID by input ID. For switches updates from mqtt bus
+		zwValueByAttrID:   map[string]*goopenzwave.ValueID{}, // determine ZWValue for config command
 	}
 
 	pub.SetNodeConfigHandler(app.HandleConfigCommand)
@@ -238,7 +236,7 @@ func NewOpenZwaveApp(config *OpenZwaveAppConfig, pub *publisher.Publisher) *Open
 func Run() {
 	appConfig := &OpenZwaveAppConfig{}
 	// Load the appConfig from <AppID>.yaml from the default config folder (~/.config/iotdomain)
-	pub, _ := publisher.NewAppPublisher(AppID, "", appConfig, true)
+	pub, _ := publisher.NewAppPublisher(AppID, "", appConfig, "", true)
 	NewOpenZwaveApp(appConfig, pub)
 
 	pub.Start()
